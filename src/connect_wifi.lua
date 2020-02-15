@@ -5,8 +5,7 @@ return function()
   print(wifi.sta.config({
     ssid = wifi_configuration.name,
     pwd = wifi_configuration.password,
-    connected_cb = function(t)
-      print('Connected to', t.SSID)
-    end
+    connected_cb = function(t) print('Connected to', t.SSID) end,
+    got_ip_cb = function(t) print('IP: ', t.IP) end
   }))
 end
