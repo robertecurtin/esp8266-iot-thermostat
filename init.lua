@@ -27,8 +27,7 @@ srv:listen(80,function(conn)
       gpio.write(relay_gpio, gpio.LOW);
     end
 
+    client:on("sent", function() client:close() end)
     client:send(str);
-    client:close();
-    collectgarbage();
   end)
 end)
