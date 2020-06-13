@@ -42,8 +42,8 @@ srv:listen(80,function(conn)
     local str = '<p><a href=\'?lightState=On\'><button>Turn light ON</button></a><br><a href=\'?lightState=Off\'><button>Turn light OFF</button></a></p>';
 
     client:on('sent', function() client:close() end)
-    if(args.raw == '')then
-      client:send(raw_temperature);
+    if(args.value == 'raw')then
+      client:send(raw_temperature());
     else
       client:send(filtered_temperature);
     end
