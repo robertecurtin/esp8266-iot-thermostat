@@ -17,7 +17,7 @@ local raw_temperature = function()
   return counts
 end
 
-local filtered_temperature
+local filtered_temperature = 70
 
 local sample_timer = tmr.create()
 sample_timer:register(1000, tmr.ALARM_AUTO,
