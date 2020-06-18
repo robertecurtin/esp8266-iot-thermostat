@@ -1,15 +1,18 @@
-### ESP8266-iot-thermistor
+### ESP8266-iot-thermostat
 
-Allows the ESP8266 to integrate with a thermistor.
+Allows the ESP8266 to become a thermostat. This is set up for a Amana PTAC unit.
 
-Allows use of [espeon](https://github.com/ryanplusplus/espeon) to transfer files.
-
-espeon hot-fix:
-```
-git clone https://github.com/nodemcu/nodemcu-firmware
-cd nodemcu-firmware
-(cd app/lua/luac_cross && make)
-cp luac.cross ~/.lenv/lua/5.1.5/lib/luarocks/rocks-5.1/espeon/1.10-0/res/luac.cross-linux
-```
+Uses [espeon](https://github.com/ryanplusplus/espeon) to transfer files.
 
 Make sure to add your wifi configuration before running.
+
+Wiring diagram for Amana PTAC
+Label | Function
+--- | ---
+C | Common (ground)
+R | 24V
+Gl | Fan (low speed)
+W2 | Heat
+Y/W1 | Cool
+B | Unused in my model
+Gh | Fan (high speed)
